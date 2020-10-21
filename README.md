@@ -50,8 +50,13 @@ $ java -jar Webstack-Guns-nkt-1.0.jar
 
 启动完成：http://127.0.0.1:8000
 
+## Docker 打包
+执行命令： mvn clean package docker:build
 
+* 创建网络
+docker network create -d bridge docker-net
 
+启动： docker run -d --name nav --network docker-net -p 8888:8000 wuzhu/webstack-nav:latest
 ## 使用
 
 后台地址：http://domain/admin
